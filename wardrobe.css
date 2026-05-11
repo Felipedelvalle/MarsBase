@@ -1,0 +1,242 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:"Space Grotesk",sans-serif;
+background:#07080c;
+color:white;
+line-height:1.7;
+}
+
+
+
+/* PAGE TRANSITION */
+
+#page-transition{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+background:white;
+
+z-index:2000;
+
+transition:opacity 1s ease;
+
+}
+
+
+
+/* BACK BUTTON */
+
+.home-button{
+
+position:fixed;
+top:25px;
+left:25px;
+
+width:55px;
+height:55px;
+
+background:#2e7bff;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+border-radius:50%;
+
+box-shadow:0 0 20px rgba(46,123,255,.6);
+
+z-index:999;
+transition:.25s;
+
+}
+
+.home-button:hover{
+
+transform:scale(1.12);
+background:#4a90ff;
+box-shadow:0 0 30px rgba(46,123,255,.9);
+
+}
+
+.home-button svg{
+width:26px;
+stroke:white;
+stroke-width:2;
+fill:none;
+}
+
+
+
+/* HERO */
+
+.hero{
+
+height:100vh;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+
+}
+
+.hero-img{
+
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:.9;
+
+}
+
+.hero-text{
+
+position:relative;
+text-align:center;
+
+}
+
+.hero-text h1{
+
+font-family:"Rajdhani";
+font-size:5rem;
+letter-spacing:.08em;
+color:#ff6a3d;
+
+}
+
+.hero-text p{
+margin-top:10px;
+font-size: 1.25rem;
+opacity:.9;
+}
+
+
+
+/* SECTIONS */
+
+.section{
+
+max-width:1000px;
+margin:auto;
+padding:120px 30px;
+
+}
+
+.section h2{
+
+font-family:"Rajdhani";
+font-size:2.2rem;
+margin-bottom:30px;
+color:#ff6a3d;
+
+
+}
+
+
+
+/* CREDIT BOX */
+
+.credit-box{
+
+background:linear-gradient(145deg,#0f1016,#1a1d27);
+
+padding:20px;
+border-radius:20px;
+
+text-align:center;
+
+box-shadow:0 0 40px rgba(0,0,0,.6);
+margin-bottom:0px;
+
+}
+
+.credit-number{
+
+font-size:4rem;
+font-family:"Rajdhani";
+margin:20px 0;
+color:#ff6a3d;
+margin-bottom:0px;
+
+
+
+}
+
+
+
+/* CLOTHING GRID */
+
+.clothing{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:40px;
+
+}
+
+.clothing-card{
+
+background:#12141c;
+border-radius:15px;
+overflow:hidden;
+
+transition:.3s;
+cursor:pointer;
+
+}
+
+.clothing-card:hover{
+
+cursor: default;
+box-shadow:0 20px 50px rgba(255, 255, 255, 0.25);
+
+}
+
+.clothing-image{
+
+height:180px;
+overflow:hidden;
+
+}
+
+.clothing-image img{
+
+width:100%;
+height:100%;
+object-fit:cover;
+
+}
+
+.clothing-content{
+padding:25px;
+}
+
+.clothing-content h3{
+
+font-family:"Rajdhani";
+margin-bottom:10px;
+color:#ff6a3d;
+
+}
+
+
+
+/* ENDING */
+
+.ending{
+
+text-align:center;
+padding-bottom:200px;
+
+}

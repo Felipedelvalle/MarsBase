@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mars Colony Terminal</title>
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<!-- Cursor Trail -->
+<canvas id="cursorTrail"></canvas>
+
+<div class="screen-frame">
+
+  <!-- LOCK SCREEN -->
+  <div id="lockScreen" class="screen lock-screen">
+    <canvas id="dustCanvas"></canvas>
+    <div class="clock">
+      <div id="time"></div>
+      <div id="date"></div>
+    </div>
+  </div>
+
+  <!-- LOGIN SCREEN -->
+  <div id="loginScreen" class="screen login-screen hidden">
+    <div class="login-box">
+      <h2>Dani</h2>
+      <input type="password" id="passwordInput" placeholder="Enter Password">
+      <button id="loginButton">Log In</button>
+      <p id="error"></p>
+    </div>
+    <div id="loginGlowOverlay"></div>
+  </div>
+
+</div>
+
+<!-- GREEN FLASH AND WHITE FADE -->
+<div id="greenFlash"></div>
+<div id="fadeWhite" class="fade-white hidden"></div>
+
+<!-- Sounds -->
+<audio id="hoverSound" src="hover.wav"></audio>
+<audio id="clickSound" src="click.wav"></audio>
+<audio id="typingSound" src="type.wav"></audio>
+<audio id="successSound" src="success.wav"></audio>
+
+<script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mars Colony Terminal</title>
+<link rel="stylesheet" href="zarchive.css">
+</head>
+<body>
+
+  <div id="page-transition"></div>
+
+<!-- Cursor Trail -->
+<canvas id="cursorTrail"></canvas>
+
+<div class="screen-frame">
+
+  <!-- LOCK SCREEN / SCREENSAVER -->
+  <div id="lockScreen" class="screen lock-screen">
+    <canvas id="dustCanvas"></canvas>
+    <div class="clock">
+      <div id="time"></div>
+      <div id="date"></div>
+    </div>
+  </div>
+
+  <!-- LOGIN SCREEN (hidden until click) -->
+  <div id="loginScreen" class="screen login-screen hidden">
+    <div class="login-box">
+      <h2>Participant 009</h2>
+      <input type="password" id="passwordInput" placeholder="Enter Password">
+      <button id="loginButton">Log In</button>
+      <p id="error"></p>
+    </div>
+    <div id="loginGlowOverlay"></div>
+  </div>
+
+  <!-- DESKTOP -->
+  <div id="desktop" class="screen desktop hidden">
+    <canvas id="starsCanvas"></canvas>
+    <div class="icons">
+      <div class="icon" data-link="food.html">
+        <img src="food.png">
+        <span>Food Credits</span>
+      </div>
+      <div class="icon" data-link="wardrobe.html">
+        <img src="wardrobe.png">
+        <span>Wardrobe</span>
+      </div>
+      <div class="icon" data-link="files.html">
+        <img src="files.png">
+        <span>Files</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FADE TO WHITE OVERLAY -->
+<div id="fadeWhite" class="fade-white hidden"></div>
+
+<!-- Sounds -->
+<audio id="hoverSound" src="hover.wav"></audio>
+<audio id="clickSound" src="click.wav"></audio>
+<audio id="typingSound" src="type.wav"></audio>
+<audio id="successSound" src="success.wav"></audio>
+
+<script src="zarchive.js"></script>
+</body>
+</html>
