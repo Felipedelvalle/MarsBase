@@ -1,0 +1,237 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:"Space Grotesk",sans-serif;
+background:#06070b;
+color:white;
+overflow-x:hidden;
+}
+
+/* PAGE TRANSITION */
+#page-transition{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:white;
+z-index:2000;
+transition:opacity 1s ease;
+}
+
+/* PARTICLES */
+#mars-dust{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:0;
+}
+
+/* BACK BUTTON */
+.home-button{
+position:fixed;
+top:25px;
+left:25px;
+width:55px;
+height:55px;
+background:#2e7bff;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+box-shadow:0 0 20px rgba(46,123,255,.6);
+z-index:999;
+transition:.25s;
+}
+
+.home-button:hover{
+transform:scale(1.12);
+background:#4a90ff;
+box-shadow:0 0 30px rgba(46,123,255,.9);
+}
+
+.home-button svg{
+width:26px;
+stroke:white;
+stroke-width:2;
+fill:none;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:80px 30px;
+position:relative;
+z-index:1;
+}
+
+.hero-text h1{
+font-family:"Rajdhani";
+font-size:3.5rem;
+letter-spacing:.08em;
+color:#ff6a3d;
+text-shadow:0 0 6px rgba(255,90,0,0.7),0 0 12px rgba(255,90,0,0.5),0 0 18px rgba(255,90,0,0.3);
+opacity:0;
+animation: fadeInUp 1s forwards;
+animation-delay:0.5s;
+}
+
+.hero-text p{
+opacity:0;
+margin-top:10px;
+text-shadow:0 0 4px rgba(255,90,0,0.3);
+animation: fadeInUp 1s forwards;
+animation-delay:1.2s;
+}
+
+/* FILE CARDS */
+.files-section{
+max-width:1200px;
+margin:auto;
+position:relative;
+padding:40px;
+display:flex;
+flex-wrap:wrap;
+gap:30px;
+justify-content:center;
+}
+
+.file-card{
+background:#12141c;
+padding:25px;
+border-radius:15px;
+text-decoration:none;
+color:white;
+transition: transform 0.4s, box-shadow 0.3s;
+position:relative;
+overflow:hidden;
+opacity:0;
+transform:translateY(30px) rotate(var(--rot,0deg)) translate(var(--x,0), var(--y,0));
+width:250px;
+flex-shrink:0;
+box-shadow:0 8px 20px rgba(255,90,0,0.1);
+}
+
+.file-card img{
+width:100%;
+border-radius:12px;
+margin-top:10px;
+box-shadow:0 0 20px rgba(255,90,0,0.2);
+}
+
+.file-card h2{
+font-family:"Rajdhani";
+color:#ff6a3d;
+margin-bottom:10px;
+text-shadow:0 0 6px rgba(255,90,0,0.7),0 0 12px rgba(255,90,0,0.5),0 0 18px rgba(255,90,0,0.3);
+transition: text-shadow 0.3s;
+}
+
+.file-card:hover{
+transform:translateY(-10px) rotate(calc(var(--rot,0deg) + 3deg)) translate(var(--x,0), var(--y,0));
+box-shadow:0 20px 50px rgba(255,80,50,.25);
+}
+
+.file-card:hover h2{
+animation:pulseGlow 1.5s infinite alternate;
+}
+
+@keyframes pulseGlow{
+0%{text-shadow:0 0 6px rgba(255,90,0,0.7),0 0 12px rgba(255,90,0,0.5),0 0 18px rgba(255,90,0,0.3);}
+100%{text-shadow:0 0 10px rgba(255,90,0,0.9),0 0 20px rgba(255,90,0,0.7),0 0 30px rgba(255,90,0,0.5);}
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:60px 20px;
+opacity:.6;
+}
+
+/* BOOT-UP ANIMATION */
+@keyframes fadeInUp{
+0%{opacity:0; transform:translateY(30px);}
+100%{opacity:1; transform:translateY(0);}
+}
+
+/* Base styling and layout (same as before, including file-card, hero, particles, etc.) */
+
+/* ... previous CSS from the hover/float version ... */
+
+/* MODAL */
+/* modal container */
+#file-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 120%) scale(0.9); /* start below screen & slightly smaller */
+  opacity: 0;
+
+  width: 90%;
+  max-width: 900px;
+  max-height: calc(100vh - 40px);
+  background: rgba(18,20,28,0.95);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255,90,0,0.2); /* initial subtle glow */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  z-index: 9999;
+
+  transition: transform 0.7s cubic-bezier(.22,1.3,.36,1), opacity 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* open state: slide up + neon pop */
+#file-modal.open {
+  transform: translate(-50%, -50%) scale(1); /* center + normal size */
+  opacity: 1;
+  box-shadow: 0 0 60px rgba(255,90,0,0.8); /* strong neon glow */
+}
+
+/* modal image */
+#file-modal img {
+  max-width: 100%;
+  max-height: calc(100vh - 80px);
+  object-fit: contain;
+  border-radius: 12px;
+
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* Remove hover scaling and glow */
+#file-modal.open img:hover {
+  transform: none;
+  filter: none;
+  cursor: default; /* optional: prevents pointer cursor */
+}
+
+/* close button */
+#modal-close {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #e4000b;
+  cursor: pointer;
+
+  transition: transform 0.2s ease, color 0.2s ease, text-shadow 0.4s ease;
+}
+
+#modal-close:hover {
+  color: #ff4d4d;
+  transform: scale(1.3);
+  text-shadow: 0 0 8px rgba(255,80,50,0.8);
+}

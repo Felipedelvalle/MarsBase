@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mars Desktop</title>
+<link rel="stylesheet" href="desktop.css">
+</head>
+
+<body>
+
+<canvas id="starsCanvas"></canvas>
+<canvas id="cursorTrail"></canvas> <!-- Cursor Trail Canvas -->
+
+<a href="#" id="logoutButton" class="logout-button">
+LOG OUT
+</a>
+
+<div class="icons">
+  <div class="icon" data-link="food.html">
+    <img src="food.png">
+    <span>Food Credits</span>
+  </div>
+
+  <div class="icon" data-link="wardrobe.html">
+    <img src="wardrobe.png">
+    <span>Wardrobe</span>
+  </div>
+
+  <div class="icon" data-link="files.html">
+    <img src="files.png">
+    <span>Files</span>
+  </div>
+</div>
+
+<audio id="hoverSound" src="hover.wav"></audio>
+<audio id="clickSound" src="click.wav"></audio>
+
+<script src="desktop.js"></script>
+</body>
+</html>

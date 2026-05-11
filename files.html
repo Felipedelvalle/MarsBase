@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mars Colony Files</title>
+<link rel="stylesheet" href="files.css">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="page-transition"></div>
+<canvas id="mars-dust"></canvas>
+
+<a href="desktop.html" class="home-button">
+  <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+</a>
+
+<header class="hero">
+  <div class="hero-text">
+    <h1>Mars Colony Archive</h1>
+    <p>logs, photos, and snippets of our Martian history</p>
+  </div>
+</header>
+
+<section class="files-section">
+
+  <div class="file-card" style="--rot:-5deg; --x:10px; --y:-20px;" data-image="rover.jpg">
+    <h2>Perseverance Day</h2>
+    <img src="rover.jpg" alt="Perseverance Rover">
+    <p>NASA's Perseverance rover successfully landed on Mars on February 18, 2021. 
+      The spacecraft touched down in the Jezero Crater and planted the seeds of what would become 
+      our new home.</p>
+  </div>
+
+  <div class="file-card" style="--rot:3deg; --x:-15px; --y:10px;" data-image="mountain.png">
+    <h2>Olympus Mons</h2>
+    <img src="mountain.png" alt="Olympus Mons">
+    <p>Olympus Mons was first spotted by astronomer Giovanni Schiaparelli in the late 19th century. 
+      It was later identified as the massive volcano, following images taken by the NASA Mariner 9 probe on 
+      November 14, 1971.</p>
+  </div>
+
+  <div class="file-card" style="--rot:-8deg; --x:5px; --y:25px;" data-image="moons.jpg">
+    <h2>Moons</h2>
+    <img src="moons.jpg" alt="Moons">
+    <p>Our skies are adornes with Phobos' presence, which orbits us every 7 hours 39 minutes and 12 seconds
+      Our other moon, Deimos, follows in a more distant orbit.</p>
+  </div>
+
+  <div class="file-card" style="--rot:6deg; --x:-20px; --y:-15px;" data-image="landing.jpg">
+    <h2>Our true selves</h2>
+   <img src="landing.jpg" alt="The first moon landing">
+    <p>Humans finally reached our true form on the July 20, 1969, 
+      when Neil Armstrong took his first steps on the old moon's surface.</p>
+  </div>
+
+</section>
+
+<!-- MODAL -->
+<div id="file-modal">
+  <span id="modal-close">&times;</span>
+  <img id="modal-img" src="" alt="File preview">
+</div>
+
+<footer>
+  <br>
+  <br>
+  <p>Colony Operating System • Mars Year 2126 ©</p>
+</footer>
+
+<audio id="hoverSound" src="hover.wav"></audio>
+<audio id="clickSound" src="click.wav"></audio>
+<script src="files.js"></script>
+</body>
+</html>
